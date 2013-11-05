@@ -1,0 +1,63 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <style>
+        #topMenu{position: static;
+                 width: 400px;
+                 height: 50px;
+                 background-color: azure;
+                 border-style: dotted;
+        }
+        #staticUP{position: absolute;
+                  width: 200px;
+                  height: 200px;
+                  top: 100px;
+                  left: 40px;
+                  padding: 10px;
+                  border-bottom: 1px solid;
+                  border-right: 1px solid;
+                  border-color: black;
+                  background-color: orange;
+                  color: beige;
+                  
+        }
+        #staticLOW{position: absolute;
+                   width: 100px;
+                   height: 100px;
+                   bottom: 10px;
+                   right:  10px;
+                   background-color: #FFF;
+                   color: black;
+                   rotation: 45;
+                   z-index: -1;
+        }
+        #estatico{position: static;
+                 width: 400px;
+                 height: 50px;
+                 background-color: orange;
+                 }
+                         #relativo{position: static;
+                 width: 400px;
+                 height: 50px;
+                 background-color: #666;
+                 }
+    </style>
+    <body style="background-color: #ccc">
+        <div id="relativo">esto es otro div relativo1</div>
+        <div id="staticUP"> absolute NARANJA Esta es la capa pojos adfoadjgoajdgoadjfgoajd goiajdgo
+            <div id="staticLOW"> posicionamiento Static</div>
+        </div>
+        <div id="estatico">esto es otro div relativo2</div>
+        
+        <div id="topMenu"><p> AZUL CLARITO derecha y abajo</p></div>
+        
+    </body>
+</html>
