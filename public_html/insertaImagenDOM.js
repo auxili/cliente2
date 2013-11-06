@@ -30,7 +30,7 @@ function addToCart(articulo) {
         //accedemos a los p de la imagen
         parrafoPrecio = document.createElement("p");
         parrafoUnidades = document.createElement("p");
-        txtPrecio = document.createTextNode("precio: " + substr);
+        txtPrecio = document.createTextNode("Precio: " + substr);
         txtUnidades = document.createTextNode("Unidades: " + unidades);
 
 
@@ -44,7 +44,7 @@ function addToCart(articulo) {
         d.appendChild(parrafoUnidades);
         document.getElementById('cart').appendChild(d);
     }
-    document.getElementById("cart").getElementsByTagName("p")[0].firstChild.nodeValue = totalCesta();
+    document.getElementById("cart").getElementsByTagName("p")[1].firstChild.nodeValue = "totalCesta(): " + substr*substr1;
 }
 
 
@@ -53,6 +53,5 @@ function borraImagenCart(articulo) {
     //eliminamos el div contenedor de la imagen y el botón.
     dc.parentNode.removeChild(dc);
 }
-function totalCesta(){
-    
-}
+
+
