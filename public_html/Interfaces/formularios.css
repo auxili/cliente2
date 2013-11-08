@@ -1,0 +1,18 @@
+.ayuda {display:none;}
+
+#left {width: 260px; float:left;}
+#right {width: 260px;float: left;}
+
+#left1 {clear:both;width: 260px;float:left;}
+#right1 {float:left;width: 460px;}
+
+.requerido{color:red;}
+span label {font-size: 8px; display: block;}
+/*INTENTAR SUBIR ARRIBA LOS DOS TELEFONOS: */
+input span div#left1 {float: left;}
+
+#enviar{clear:both;float:left;}
+#nombre {}
+
+#hover:hover {background-color: #FF9;}
+input:hover {border: 2px solid #E6B700;}

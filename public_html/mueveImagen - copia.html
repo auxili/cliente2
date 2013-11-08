@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Mueve Una imagen</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            #wrapper1 {
+                width: 1000px;
+                height: 100%;
+                margin:40px auto 10px auto;
+                border:solid 3px #815608;
+                border-radius: 15px;
+                overflow: hidden;
+                background-color: #aaa;
+            }
+            #products_block{
+                width: 72%;
+                float:right;
+                margin: 40px auto 10px auto;
+                border:2px solid green;
+                border-radius: 15px;
+                background-color: #222;
+                overflow: hidden;
+                padding: 5px;
+            }
+            #cart_block{
+                min-height:100px;
+                width: 25%;
+                float: left;
+                margin: 40px auto 10px auto;
+                border:2px solid green;
+                border-radius: 15px;
+                overflow: hidden;
+                background-color:orange;
+            }
+            img {padding:3px; }
+            .border{border-color:green;}
+            .product{float:left;}
+            p#cart_block{padding: 15px;}
+            p {color: white;}
+            #cart{background-color:orange;}
+        </style>
+
+        <script type="text/javascript" src="insertaImagenDOM.js"></script>
+    </head>
+    <body>
+        <div id="wrapper1">
+            <div id="products_block">
+                <div id="art1" class="product" onclick="addToCart(this)">
+                    <img src="1.jpg">				
+                    <p>Precio: 100</p>
+                </div>
+               
+                <div id="art2" class="product" onclick="addToCart(this)">
+                    <img src="2.jpg">				
+                    <p>Precio: 200</p>
+                </div>
+                <div id="art3" class="product" onclick="addToCart(this)">
+                    <img src="3.jpg">				
+                    <p>Precio: 300</p>
+                </div>
+
+            </div>
+            <div id="cart_block">
+                <div id="cart"><p>Cesta Compra:</p>
+                    <p>Total: 0€</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
