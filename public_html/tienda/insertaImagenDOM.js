@@ -17,6 +17,7 @@ function addToCart(articulo) {
     }
     else {
         d = document.createElement("div");
+        d.setAttribute("width","40%")
         d.id = "c" + articulo.id;
         d.setAttribute("onclick", "borraImagenCart(c" + articulo.id + ")");
         imagen = document.createElement("img");
@@ -44,7 +45,7 @@ function addToCart(articulo) {
         d.appendChild(parrafoUnidades);
         document.getElementById('cart').appendChild(d);
     }
-    document.getElementById("cart").getElementsByTagName("p")[1].firstChild.nodeValue = "Total Cesta: " + totalCesta();
+    document.getElementById("cart").getElementsByTagName("p")[1].firstChild.nodeValue = "Total Cesta: " + totalCesta() + "  €";
 }
 
 
@@ -52,41 +53,21 @@ function borraImagenCart(articulo) {
     dc = document.getElementById(articulo.id);
     //eliminamos el div contenedor de la imagen y el botón.
     dc.parentNode.removeChild(dc);
+    document.getElementById("cart").getElementsByTagName("p")[1].firstChild.nodeValue = "Total Cesta: " + totalCesta() + "  €";
 }
 
-function totalCesta() {
 
+function totalCesta(){
+    var elPrecio = 0;
     Productos = document.getElementById("cart").getElementsByTagName("div");
-
-    total = 0;
-    sumaPrecio = 0;
-    sumaUnidades = 0;
-
-    for (i = 0; i <= Productos.length; i++) {
-        //alert(Productos[i].id);
-        producto=document.getElementById(Productos[i].id);
-        miprecio=producto.getElementsByTagName("p")[0].firstChild.nodeValue;
-         alert (miprecio); 
-         
-            /* valorDeParrafo0 = document.getElementById(producto).getElementsByTagName("p")[0].firstChild.nodeValue;
-            substrValorPorDefecto0 = parseInt(valorDeParrafo0.substring(8))
-            sumaPrecio = sumaPrecio + substrValorPorDefecto0;
-
-            valorDeParrafo1 = document.getElementById(producto).getElementsByTagName("p")[1].firstChild.nodeValue;
-            substrValorPorDefecto1 = parseInt(valorDeParrafo1.substring(10));
-            sumaUnidades = sumaUnidades + substrValorPorDefecto1;
-        */
-        /* 
-         valorDeParrafo0 = document.getElementById(Productos[i].id).getElementsByTagName("p")[0].firstChild.nodeValue;
-         substrValorPorDefecto0 = parseInt(valorDeParrafo0.substring(8))
-         sumaPrecio = sumaPrecio + substrValorPorDefecto0;
-         
-         valorDeParrafo1 = document.getElementById(Productos[i].id).getElementsByTagName("p")[1].firstChild.nodeValue;
-         substrValorPorDefecto1 = parseInt(valorDeParrafo1.substring(10));
-         sumaUnidades = sumaUnidades + substrValorPorDefecto1;
-         */
+    for(i=0;i<Productos.length;i++){
+        producto = document.getElementById(Productos[i].id);
+        miprecio = producto.getElementsByTagName("p")[0].firstChild.nodeValue;
+        miStrPrecio = parseInt(miprecio.substring(8));
+        
+        miunidad = producto.getElementsByTagName("p")[1].firstChild.nodeValue;
+        miStrUnidad = parseInt(miunidad.substring(10));
+        elPrecio = elPrecio + miStrPrecio*miStrUnidad;
     }
-    total = sumaPrecio * sumaUnidades;
-
-    return total;
+    return elPrecio;
 }

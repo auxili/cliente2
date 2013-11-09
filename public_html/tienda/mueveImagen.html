@@ -13,7 +13,7 @@
                 background-color: #aaa;
             }
             #products_block{
-                width: 72%;
+                width: 66%;
                 float:right;
                 margin: 40px auto 10px auto;
                 border:2px solid green;
@@ -21,10 +21,11 @@
                 background-color: #222;
                 overflow: hidden;
                 padding: 5px;
+                
             }
             #cart_block{
                 min-height:100px;
-                width: 25%;
+                width: 32%;
                 float: left;
                 margin: 40px auto 10px auto;
                 border:2px solid green;
@@ -32,12 +33,14 @@
                 overflow: hidden;
                 background-color:orange;
             }
-            img {padding:3px; }
+            div {float:left;}
+            img {padding:3px;}
             .border{border-color:green;}
             .product{float:left;}
             p#cart_block{padding: 15px;}
             p {color: white;}
             #cart{background-color:orange;}
+            #tituloCesta{text-transform: uppercase; color: #ccffcc}
         </style>
 
         <script type="text/javascript" src="insertaImagenDOM.js"></script>
@@ -45,6 +48,8 @@
     <body>
         <div id="wrapper1">
             <div id="products_block">
+                <p id="tituloCesta">Lista de productos</p>
+                <p>Compre</p>
                 <div id="art1" class="product" onclick="addToCart(this)">
                     <img src="1.jpg">				
                     <p>Precio: 100</p>
@@ -58,12 +63,27 @@
                     <img src="3.jpg">				
                     <p>Precio: 300</p>
                 </div>
+                <div id="art4" class="product" onclick="addToCart(this)">
+                    <img src="4.jpg">				
+                    <p>Precio: 400</p>
+                </div>
+                <div id="art5" class="product" onclick="addToCart(this)">
+                    <img src="5.jpg">				
+                    <p>Precio: 500</p>
+                </div>
+                <div id="art6" class="product" onclick="addToCart(this)">
+                    <img src="6.jpg">				
+                    <p>Precio: 600</p>
+                </div>
 
             </div>
             <div id="cart_block">
-                <div id="cart"><p>Cesta Compra:</p>
-                    <p>Total: 0€</p>
+                <div id="cart">
+                    <p id="tituloCesta">Cesta de la compra</p>
+                    <p>Total Cesta: 0 €</p>
+                    <p id="tituloCesta">Pagar</p>
                 </div>
+                
             </div>
         </div>
     </body>
