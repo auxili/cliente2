@@ -1,7 +1,7 @@
 .ayuda {display:none;}
-
+ul{list-style: none;}
 #left {width: 260px; float:left;}
-#right {width: 260px;float: left;}
+#right {width: 260px; float: left;}
 
 #left1 {clear:both;width: 260px;float:left;}
 #right1 {float:left;width: 460px;}
@@ -11,8 +11,17 @@ span label {font-size: 8px; display: block;}
 /*INTENTAR SUBIR ARRIBA LOS DOS TELEFONOS: */
 input span div#left1 {float: left;}
 
-#enviar{clear:both;float:left;}
+span {float:left;}
+#direcc{width: 220px;}
+.completo{width: 100%;}
+.dostercios{width: 160px;}
+.tercio{width: 70px;}
+.untercio{width: 33%;}
+.dos3{width: 66%;}
+
+
+#enviar{clear:both;float:right;}
 #nombre {}
 
-#hover:hover {background-color: #FF9;}
-input:hover {border: 2px solid #E6B700;}
+li:hover {background-color: #FF9;}
+input:focus {border: 2px solid #E6B700;}

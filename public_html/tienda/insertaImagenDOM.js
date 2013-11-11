@@ -67,6 +67,7 @@ function totalCesta(){
         
         miunidad = producto.getElementsByTagName("p")[1].firstChild.nodeValue;
         miStrUnidad = parseInt(miunidad.substring(10));
+        
         elPrecio = elPrecio + miStrPrecio*miStrUnidad;
     }
     return elPrecio;
