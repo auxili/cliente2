@@ -3,88 +3,89 @@
     <head>
         <title></title>
         <link href="restaurante.css" rel="stylesheet" type="text/css">
+        <script  src="restaurante.js" type="text/javascript"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
-    <body>
+    <body >
         <div id="wrapper">WRAPER
             <div id="menu">
-               
-                    <a href="#">Inicio</a>
-                    <a href="#">Inicio</a>
-                    <a href="#">Inicio</a>
-                    <a href="#">Inicio</a>
-                    <a href="#">Inicio</a>
-                
+
+                <a href="#">Inicio</a>
+                <a href="#">Inicio</a>
+                <a href="#">Inicio</a>
+                <a href="#">Inicio</a>
+                <a href="#">Inicio</a>
+
             </div>
             <div id="pedido">
-                <div id="plato">
-                    <img src="img/p1.jpg">
-                    <p> Precio: 10 €</p>
-                    
-                    <form action="#" method="get">
-                        <input type="checkbox" name="p" value="10"> Elija <br>
-                    </form>
-                </div>
-                <div id="plato">
-                    <img src="img/p2.jpg">
-                    <p> Precio: 10 €</p>
-                    <form action="#" method="get">
-                        <input type="checkbox" name="p" value="10"> Elija <br>
-                    </form>
-                </div>
-                <div id="plato">
-                    <img src="img/p3.jpg">
-                    <p> Precio: 10 €</p>
-                    <form action="#" method="get">
-                        <input type="checkbox" name="p" value="10"> Elija <br>
-                    </form>
-                </div>
-                <div id="plato">
-                    <img src="img/s1.jpg">
-                    <p> Precio: 10 €</p>
-                    <form action="#" method="get">
-                        <input type="checkbox" name="s" value="10"> Elija <br>
-                    </form>
-                </div>
-                <div id="plato">
-                    <img src="img/s2.jpg">
-                    <p> Precio: 10 €</p>
-                    <form action="#" method="get">
-                        <input type="checkbox" name="s" value="10"> Elija <br>
-                    </form>
-                </div>
-                <div id="plato">
-                    <img src="img/s3.jpg">
-                    <p> Precio: 10 €</p>
-                    <form action="#" method="get">
-                        <input type="checkbox" name="s" value="10"> Elija <br>
-                    </form>
-                </div>
-                <div id="plato">
-                    <img src="img/t1.jpg">
-                    <p> Precio: 10 €</p>
-                    <form action="#" method="get">
-                        <input type="checkbox" name="t" value="10"> Elija <br>
-                    </form>
-                </div>
-                <div id="plato">
-                    <img src="img/t2.jpg">
-                    <p> Precio: 10 €</p>
-                    <form action="#" method="get">
-                        <input type="checkbox" name="t" value="10"> Elija <br>
-                    </form>
-                </div>
-                <div id="plato">
-                    <img src="img/t3.jpg">
-                    <p> Precio: 10 €</p>
-                    <form action="#" method="get">
-                        <input type="checkbox" name="t" value="10"> Elija <br>
-                    </form>
-                </div>
+                <form id="primeros" method="get">
+                    <div id="plato">
+                        <img src="img/p1.jpg">
+                        <p> Precio: 10 €</p>
+                        <input type="radio" name="p" id="p" value="10"> Elija <br>
+
+                    </div>
+                    <div id="plato">
+                        <img src="img/p2.jpg" >
+                        <p> Precio: 10 €</p>
+                        <input type="radio" name="p"  id="p" value="10"> Elija <br>
+                    </div>
+                    <div id="plato">
+                        <img src="img/p3.jpg">
+                        <p> Precio: 10 €</p>
+                        <input type="radio" name="p" id="p"  value="10"> Elija <br>
+                    </div>
+                </form>
+                <form id="segundos" method="get">
+                    <div id="plato">
+                        <img src="img/s1.jpg">
+                        <p> Precio: 10 €</p>
+
+                        <input type="radio" name="s"  id="s" value="10"> Elija <br>
+
+                    </div>
+                    <div id="plato">
+                        <img src="img/s2.jpg">
+                        <p> Precio: 10 €</p>
+
+                        <input type="radio" name="s"  id="s" value="10"> Elija <br>
+
+                    </div>
+                    <div id="plato">
+                        <img src="img/s3.jpg">
+                        <p> Precio: 10 €</p>
+
+                        <input type="radio" name="s"   id="s" value="10"> Elija <br>
+
+                    </div>
+                </form>
+                <form id="terceros" method="get">
+                    <div id="plato">
+                        <img src="img/t1.jpg">
+                        <p> Precio: 10 €</p>
+
+                        <input type="radio" name="t"   id="t" value="10"> Elija <br>
+
+                    </div>
+                    <div id="plato">
+                        <img src="img/t2.jpg">
+                        <p> Precio: 10 €</p>
+
+                        <input type="radio" name="t"  id="t" value="10"> Elija <br>
+
+                    </div>
+                    <div id="plato">
+                        <img src="img/t3.jpg">
+                        <p> Precio: 10 €</p>
+
+                        <input type="radio" name="t"  id="t" value="10"> Elija <br>
+
+                    </div>
+                </form>
             </div>
 
             <div id="total">
-                <input type="submit" value="Calcular"> Precio Total Menú: 
+                <input type="submit" value="Calcular" onclick="totalMenu()"> Precio Total Menú: 
             </div>
         </div>
     </body>
