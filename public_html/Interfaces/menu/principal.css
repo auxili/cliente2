@@ -2,25 +2,27 @@
 #192666, imagen de fondo llamada fondo.gif, color de fondo #F2F5FE*/
 body{font-family: Verdana; 
      color: #192666;
-     background-image: url('fondo.gif');
-     background-repeat: repeat-x;
-     background-color: #F2F5FE;
+     background:#F2F5FE url('fondo.gif') 0 0 repeat-x;
 }
+
 /*Definir la estructura básica de la página: anchura fija de 770 píxel, centrada en la
 ventana del navegador, cabecera y pie, columna central de contenidos de anchura
 530 píxel y columna secundaria de contenidos de 200 píxel de anchura*/
 #contenedor{
+
     width: 770px;
     margin: 0 auto;
 
 }
+
+
 /*Los elementos del menú de navegación tienen un color de fondo #253575, un color
 de letra #B5C4E3. Cuando el ratón pasa por encima de cada elemento, su color de
 fondo cambia a #31479B. Los elementos seleccionados se muestran con un color de
 fondo blanco y un color de letra #FF9000:*/
 #menu{
     clear:both;
-    margin: -16px auto 0 auto;
+    margin: -16px auto 0px  auto;
     width: 761px;
     height: 48px;
     background-color: #253575;
@@ -38,7 +40,7 @@ fondo blanco y un color de letra #FF9000:*/
     text-decoration: none;
 }
 #menu ul li{
-    margin-top: 8px;
+    margin-top: 7px;
     margin-right: 5px;
     padding:10px;
     background-color: #31319a;
@@ -61,26 +63,102 @@ fondo blanco y un color de letra #FF9000:*/
 #buscador{
     margin:10px;
     float:right;
-    
+
 }
 fieldset{border: 0px;}
 legend {
     display:none;
 }
-#contenido{  
+#contenido{
+    margin: 0 auto;
+    padding:10px; 
+    width: 740px;
+    height: 900px;
+    background-color: white;
 }
 #principal{
+    background-color: white;
     float:left;
     width: 530px;
 }
-#articulo{
-    
+.articulo{
+
+    padding:10px 0 10px 0;
+    background-image: url('fondo_articulo.jpg');
 }
+
+.articulo h2 {
+    margin: 10px 0 10px 0;
+    background-color: #e2eeff;
+}
+
+
+/*---------------DERECHA-------------------*/
 #secundario{
-    width: 200px;
-    float:right;
+    background:url("fondo_columna.gif") 0 0 no-repeat;
+    float:left; 
+    width:200px; 
+    margin:0; 
+    padding:0; 
 }
+#secundario h3{
+    background:#A0B9F3;
+    padding:10px;
+}
+#sobremi{
+    background-color:#CDDAF8;
+    margin-top: -18px;
+    padding:20px 10px;
+
+}
+#categorias{
+    background-color: #CDDAF8;
+}
+ul#categorias {
+    width: 200px;
+    list-style: none;
+    margin:0;
+    padding: 0; 
+}
+
+ul#categorias li {
+
+    border-top: 1px solid #FFF;
+    background: #CDDAF8;
+}
+ul#categorias li a {
+
+    padding: .2em 0 .2em 1.3em;
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+ul#categorias li a:link{
+
+}
+
+ul#categorias li a:hover{
+    background: url(imagenes/flecha_activa.png) no-repeat;
+    font-size: 1.1em;
+    color:#192666;
+    background-color: #DDE4FC;
+}
+#archivo{
+    background-color: #CDDAF8;
+}
+#enlaces{
+    margin: -20px 0 0 0;
+    background-color: #CDDAF8;
+}
+/*---------------FOOTER--------------*/
 #pie{
     clear:both; 
     margin: 0 auto;
+}
+
+.clear{
+    margin:-19px 0;
+}
+.seleccionado{
+    margin: -20px 0 0 0;
 }
