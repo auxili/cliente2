@@ -1,3 +1,86 @@
 /*Añadir los estilos básicos de la página (tipo de letra Verdana, color de letra
 #192666, imagen de fondo llamada fondo.gif, color de fondo #F2F5FE*/
-#cabecera{background-image: url('cabecera.jpg');}
+body{font-family: Verdana; 
+     color: #192666;
+     background-image: url('fondo.gif');
+     background-repeat: repeat-x;
+     background-color: #F2F5FE;
+}
+/*Definir la estructura básica de la página: anchura fija de 770 píxel, centrada en la
+ventana del navegador, cabecera y pie, columna central de contenidos de anchura
+530 píxel y columna secundaria de contenidos de 200 píxel de anchura*/
+#contenedor{
+    width: 770px;
+    margin: 0 auto;
+
+}
+/*Los elementos del menú de navegación tienen un color de fondo #253575, un color
+de letra #B5C4E3. Cuando el ratón pasa por encima de cada elemento, su color de
+fondo cambia a #31479B. Los elementos seleccionados se muestran con un color de
+fondo blanco y un color de letra #FF9000:*/
+#menu{
+    clear:both;
+    margin: -16px auto 0 auto;
+    width: 761px;
+    height: 48px;
+    background-color: #253575;
+}
+#menu ul li:hover{
+    background-color: #fff;
+
+}
+#menu ul li:visited{
+    background-color: white;
+    color: #FF9000;
+}
+#menu a{
+    color: #a5a5f4;
+    text-decoration: none;
+}
+#menu ul li{
+    margin-top: 8px;
+    margin-right: 5px;
+    padding:10px;
+    background-color: #31319a;
+    list-style: none;
+    float:left;
+}
+#cabecera{
+    height: 100px;
+    background-image: url('cabecera.jpg');
+    margin: 0 auto;
+}
+#logo{
+    float:left;
+    margin: 30px;
+}
+#logo a{
+    color: #F2F5FE;
+    text-decoration: none;
+}
+#buscador{
+    margin:10px;
+    float:right;
+    
+}
+fieldset{border: 0px;}
+legend {
+    display:none;
+}
+#contenido{  
+}
+#principal{
+    float:left;
+    width: 530px;
+}
+#articulo{
+    
+}
+#secundario{
+    width: 200px;
+    float:right;
+}
+#pie{
+    clear:both; 
+    margin: 0 auto;
+}
