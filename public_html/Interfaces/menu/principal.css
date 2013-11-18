@@ -1,25 +1,14 @@
-/*Añadir los estilos básicos de la página (tipo de letra Verdana, color de letra
-#192666, imagen de fondo llamada fondo.gif, color de fondo #F2F5FE*/
-body{font-family: Verdana; 
-     color: #192666;
-     background:#F2F5FE url('fondo.gif') 0 0 repeat-x;
+body{
+    font-family: verdana; 
+    color: #192666;
+    background:#F2F5FE url('img/fondo.gif') 0 0 repeat-x;
 }
 
-/*Definir la estructura básica de la página: anchura fija de 770 píxel, centrada en la
-ventana del navegador, cabecera y pie, columna central de contenidos de anchura
-530 píxel y columna secundaria de contenidos de 200 píxel de anchura*/
 #contenedor{
-
     width: 770px;
-    margin: 0 auto;
-
+    margin: 30px auto;
 }
 
-
-/*Los elementos del menú de navegación tienen un color de fondo #253575, un color
-de letra #B5C4E3. Cuando el ratón pasa por encima de cada elemento, su color de
-fondo cambia a #31479B. Los elementos seleccionados se muestran con un color de
-fondo blanco y un color de letra #FF9000:*/
 #menu{
     clear:both;
     margin: -16px auto 0px  auto;
@@ -27,45 +16,56 @@ fondo blanco y un color de letra #FF9000:*/
     height: 48px;
     background-color: #253575;
 }
-#menu ul li:hover{
-    background-color: #fff;
-
+#menu li:hover{
+    background-color: #96b5ff;
 }
-#menu ul li:visited{
-    background-color: white;
-    color: #FF9000;
-}
-#menu a{
-    color: #a5a5f4;
-    text-decoration: none;
+#contenedor #menu a:hover{
+    color:#FFF ;
 }
 #menu ul li{
-    margin-top: 7px;
+
+    margin-top: 8px;
     margin-right: 5px;
     padding:10px;
     background-color: #31319a;
     list-style: none;
     float:left;
+    border-radius: 10px 10px 0px 0px;
 }
+#menu .seleccionado{
+    background-color: #FFF;
+    color: #AAA;
+}
+#menu .seleccionado a{
+    color:#FF9000;
+}
+#menu a{
+    color: #a5a5f4;
+    text-decoration: none;
+}
+
 #cabecera{
     height: 100px;
-    background-image: url('cabecera.jpg');
+    background-image: url('img/cabecera.jpg');
     margin: 0 auto;
 }
+
 #logo{
     float:left;
     margin: 30px;
 }
 #logo a{
+    font:32px sofia;
     color: #F2F5FE;
-    text-decoration: none;
 }
 #buscador{
-    margin:10px;
+    margin:35px 10px 10px 10px;
     float:right;
 
 }
-fieldset{border: 0px;}
+fieldset{
+    border: 0px;
+}
 legend {
     display:none;
 }
@@ -73,31 +73,75 @@ legend {
     margin: 0 auto;
     padding:10px; 
     width: 740px;
-    height: 900px;
+    height: 760px;
     background-color: white;
 }
 #principal{
     background-color: white;
     float:left;
     width: 530px;
+    margin-left:10px;
 }
 .articulo{
-
     padding:10px 0 10px 0;
-    background-image: url('fondo_articulo.jpg');
+    background-image: url('img/fondo_articulo.jpg');
 }
 
 .articulo h2 {
-    margin: 10px 0 10px 0;
+    margin: 9px 0 10px 0;
     background-color: #e2eeff;
+    border:0;
+    padding:7px; 
+}
+.articulo h2 a{
+    margin-left: 10px;
+    font-family: "georgia",serif;
+    font-size: 16px;
+}
+.articulo p {
+    font-size: 11px;
+    padding: 10px;
+    text-align:justify;    
+}
+.articulo .btn-more{
+    font: 11px georgia;
 }
 
+.info {
+    margin:10px 0; 
+    padding-bottom:8px; 
+    border-bottom:1px solid #DEE5FD; 
+    color:#6685CC;
+    font-size: 0.7em;
+}
+.info a {
+    color:#6685CC;
+}
+.info a:hover {
+    color:#FF9000;
+}
+.info span.fecha, .info span.categoria, .info span.autor, .info span.comentarios {
+    padding-left:25px;
+}
+.info span.fecha {
+    background:url("img/icono_fecha.gif") 10px 50% no-repeat;
+}
+.info span.categoria {
+    background:url("img/icono_categoria.gif") 10px 50% no-repeat;
+}
+.info span.autor {
+    background:url("img/icono_autor.gif") 10px 50% no-repeat;
+}
+.info span.comentarios {
+    background:url("img/icono_comentarios.gif") 10px 50% no-repeat;
+}
 
 /*---------------DERECHA-------------------*/
 #secundario{
-    background:url("fondo_columna.gif") 0 0 no-repeat;
+    background:#cfdcfa url("img/fondo_columna.gif") 0 0 no-repeat;
     float:left; 
     width:200px; 
+    height:770px;
     margin:0; 
     padding:0; 
 }
@@ -105,55 +149,70 @@ legend {
     background:#A0B9F3;
     padding:10px;
 }
+
 #sobremi{
     background-color:#CDDAF8;
     margin-top: -18px;
     padding:20px 10px;
-
+    height: 70px;
 }
-#categorias{
+#sobremi img{
+    float:left;
+}
+#sobremi p{
+    font-size:11px;
+    float:right;
+}
+
+#categorias, #archivo, #enlaces{
+    clear:right;
     background-color: #CDDAF8;
 }
-ul#categorias {
+ul#categorias, ul#archivo, ul#enlaces{
+    font-size:13px;
     width: 200px;
     list-style: none;
     margin:0;
     padding: 0; 
 }
-
-ul#categorias li {
-
+ul#categorias li, ul#archivo li, ul#enlaces li {
     border-top: 1px solid #FFF;
     background: #CDDAF8;
 }
-ul#categorias li a {
-
-    padding: .2em 0 .2em 1.3em;
+ul#categorias li a, ul#archivo li a, ul#enlaces li a{
+    background:#E0E8FA url("img/icono_elemento.gif") 4px no-repeat;
+    padding: .5em 0 .5em 1.3em;
     display: block;
     text-decoration: none;
     color: #333;
 }
-ul#categorias li a:link{
 
-}
-
-ul#categorias li a:hover{
-    background: url(imagenes/flecha_activa.png) no-repeat;
-    font-size: 1.1em;
+ul#categorias li a:hover, ul#archivo li a:hover{
     color:#192666;
     background-color: #DDE4FC;
 }
-#archivo{
-    background-color: #CDDAF8;
+#categorias .seleccionado a, #archivo .seleccionado a,ul#enlaces li a:hover{
+    background:#E0E8FA url("img/icono_elemento_seleccionado.gif") 4px no-repeat;
+    font-weight:bold;
 }
+
 #enlaces{
     margin: -20px 0 0 0;
     background-color: #CDDAF8;
 }
+
+
 /*---------------FOOTER--------------*/
 #pie{
     clear:both; 
-    margin: 0 auto;
+    margin: -16px auto;
+    background:#fff url('img/fondo_pie.jpg')0 no-repeat;
+}
+#copyright{
+    margin-left:50px;
+    font: 12px georgia;
+    color: #6685CC;
+    
 }
 
 .clear{
