@@ -15,6 +15,11 @@ libro.prototype.mostrar = function() {
     alert("libro: " + this.titulo +
             "autor: " + this.autor +
             "stock: " + this.stock);
+    str="libro: " + this.titulo +
+            "autor: " + this.autor +
+            "stock: " + this.stock;
+    
+    
 }
 function comprarLibro() {
     miLibro.comprar();
