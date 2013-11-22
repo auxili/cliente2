@@ -1,0 +1,32 @@
+* {background-color: #cc99ff;}
+ul li, td, p {
+    background-color: #66cc66;
+    color: #0033FF; 
+}
+ul li:hover, td:hover, p:hover {
+    background-color: #000;
+    color: #FFF; 
+}
+ul li, td, p{
+    float:left;
+    list-style: none;
+    padding: 40px;
+    margin: 10px;
+}
+table{
+        border: 0px;
+        
+}
+h2{
+    clear:both;
+    border-top: 1px solid black;
+    
+}
+address{
+    clear: both;
+    float:right;
+}
+
+
+
+

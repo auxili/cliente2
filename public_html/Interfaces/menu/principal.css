@@ -165,7 +165,7 @@ legend {
 }
 
 #categorias, #archivo, #enlaces{
-    clear:right;
+ 
     background-color: #CDDAF8;
 }
 ul#categorias, ul#archivo, ul#enlaces{
@@ -216,6 +216,7 @@ ul#categorias li a:hover, ul#archivo li a:hover{
 }
 
 .clear{
+    clear: both;
     margin:-19px 0;
 }
 .seleccionado{
