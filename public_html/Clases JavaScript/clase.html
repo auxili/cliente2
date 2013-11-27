@@ -1,0 +1,33 @@
+
+	
+	<style>
+		.rojo {color: red;}
+		.blanco {background-color: red;}
+</style>
+
+	
+	
+	<script>
+	function pon_rojo()
+	{
+	
+	document.getElementById("p1").className="rojo";
+	}
+	function pon_azul()
+	{
+	document.getElementById("p1").className="blanco";
+	}
+	
+	function cerrar()
+	{
+		window.close();
+	}
+	
+	
+	</script>
+<body>
+<p id="p1"> Texto del parrafo 1
+<input type=button onclick="pon_rojo()" value="Poner clase Rojo">
+<input type=button onclick="pon_azul()" value="Poner clase Azul">
+<input type=button onclick="cerrar()" value="cerrar">
+</body>

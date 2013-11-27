@@ -1,0 +1,28 @@
+<html>
+<script>
+
+
+function muestraMensaje() {
+  alert("Has pulsado el ratón");
+}
+ 
+function muestraOtroMensaje() {
+  alert("Has pulsado el ratón y por eso se muestran estos mensajes");
+}
+ 
+window.onload=function()
+{
+var elDiv = document.getElementById("divprincipal");
+elDiv.addEventListener("click", muestraMensaje, false);
+elDiv.addEventListener("click", muestraOtroMensaje, true);
+}
+
+
+</script>
+<body>
+<div id="divprincipal" style="background-color:red">
+bnbnam,bas,msb,msabmnsabmnsabmnbsam
+</div>
+<div id="eldiv">xxxxxxxxxxxxxxxxxxxxx</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>SetInterval
+</title>
+
+<script type="text/javascript">
+
+i=1;
+
+function inicia()
+{
+	v=setInterval("cambiafoto()",2000);
+}
+
+function cambiafoto()
+{
+	mifoto="./fotos/f" + i + ".jpg";
+	
+	document.getElementById("foto").src=mifoto;
+	i++;
+	if(i>4) i=1;
+}
+
+function parafoto()
+{
+	clearInterval(v)
+}
+</script>
+</head> 
+
+
+<body text='blue' link='red' bgcolor='orange' vlink='grey'>
+
+<img id="foto" src=".\fotos\f1.jpg">
+<br>
+<input type=button onclick="inicia()" value="Iniciar animacion">
+<input type=button onclick="parafoto()" value="Detener animacion">
+</html> 

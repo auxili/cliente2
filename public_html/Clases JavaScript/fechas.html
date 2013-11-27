@@ -1,0 +1,38 @@
+<html>
+<style>
+#capa{
+width:100px;
+height:100px;
+background-color:red;
+}
+</style>
+
+<script type="text/javascript"> 
+
+function fecha()
+{
+meses=["Enero","Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre", "Octubre", "Noviembre", "Diciembre"];
+dias=["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+
+fecha=new Date();
+
+msg="Hoy es "+dias[fecha.getDay()] + " "+ fecha.getDate()+" de "+meses[fecha.getMonth()]+ " de " +fecha.getFullYear();
+
+alert (msg);
+document.getElementById('capa').innerHTML=msg;
+
+frase="La casa verde";
+alert(frase.replace(/"verde"/g,""));
+}
+
+
+
+</script>
+<body>
+<a href="javascript:fecha()">Ver Fecha</a>
+<div id="capa">
+
+
+</div>
+</body>
+</html>

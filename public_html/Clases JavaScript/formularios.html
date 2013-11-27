@@ -1,0 +1,33 @@
+<html>
+<script type="text/javascript">
+function mostrar(){
+	alert('Su nombre: ' + document.formulario.nombre.value);
+	alert('El password: ' + document.formulario.pass.value);
+}
+function llevarnom(){
+	document.formulario.nombre.blur();
+}
+function posarnom(){
+	document.formulario.nombre.focus();
+}
+function netejar(){
+	document.formulario.reset();
+}
+function foco()
+{
+alert ("Tengo el foco");
+}
+
+</script>
+
+<body>
+<form action="procesa.php" name="formulario" id="formulario" method="POST" >
+	Nombre: <input type="text" name="nombre" value="El teu nom" maxlength="15" onfocus="this.color='red'"><br>
+	Password: <input type="password" name="pass" maxlength="10"><br>	
+</form>
+<a href="#" onclick="mostrar();return false;">Mostrar datos</a><br>
+<a href="#" onclick="posarnom();return false;">Nombre</a><br>
+<a href="#" onclick="netejar();return false;">Borrar datos</a><br>
+<a href="#" onclick="llevarnom();return false;">Quitar foco a nombre</a><br>
+</body>
+</html>

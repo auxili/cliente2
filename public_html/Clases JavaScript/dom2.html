@@ -1,0 +1,15 @@
+<html>
+
+<html>
+<head><title>Exemple 1</title></head>
+<body>
+<h1>Aplicando el DOM</h1>
+<p id="p1">El párrafo uno</p>
+<p align="center">El párrafo dos</p>
+<script type="text/javascript">
+var Op2=document.getElementsByTagName("p")[1];
+if(Op2.hasAttribute("align"))
+	
+	alert("Tiene align="+Op2.getAttribute("align"));
+Op2.setAttribute("align","right");
+</script>

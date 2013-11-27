@@ -1,0 +1,13 @@
+#wrapper{
+    width: 1210px;
+    height: 100%;
+    background-color: cadetblue;}
+img {float:left;margin:3px;}
+#menu{}
+#pedido{}
+#total{clear:left;}
+#plato{width:400px;float:left;height: 220px;}
+#precio{}
+
+
+

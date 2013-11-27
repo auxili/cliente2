@@ -1,0 +1,19 @@
+<script type="text/javascript"> 
+var j=new Array(2), i=new Array(1,"hola",3); 
+var b=new Array("palabra","letra","amor","color","cariño"); 
+var c=new Array(false); 
+j[0]=new Array(3); j[1]=new Array(); 
+j[0][0]=0; j[0][1]=1; j[0][2]=2; j[1][0]=3; j[1][1]=4; j[1][2]=5; 
+document.write(c); 
+document.write("<p>"+i+"<\p>");  document.write("<p>"+i+"<\p>"); 
+document.write("<p>j[0][0]="+j[0][0]+"; j[0][1]="+j[0][1]+ "; 
+j[0][2]="+j[0][2]+"<br>"); 
+document.write("j[1][0]="+j[1][0]+"; j[1][1]="+j[1][1]+"; j[1][2]="+j[1][2]+"</p>"); 
+document.write("<p>i[0]="+i[0]+"; i[1]="+i[1]+"; i[2]="+i[2]+"</p>");
+document.write("<p>toString: "+b.toString()+"</p>");
+document.write("<p>Antes de ordenar: "+b.join(', ')+"</p>"); 
+document.write("<p>Ordenados: "+b.sort()+"</p>"); 
+document.write("<p>Ordenados en orden inverso: "+b.reverse()+"</p>");
+b[b.length]="fin";
+alert(b);
+</script>

@@ -1,0 +1,96 @@
+
+<script>
+function resalta(elEvento) {
+  
+  var evento = elEvento ;
+  
+  alert(evento.type);
+  
+  switch(evento.type) {
+    case 'mouseover':
+      this.style.borderColor = 'black';
+      break;
+    case 'mouseout':
+      this.style.borderColor = 'silver';
+      break;
+  }
+}
+ 
+window.onload = function() {
+/*
+  miscapas=document.getElementsByTagName("div");
+  for (i=0;i<miscapas.length;i++)
+  {
+	miscapas[i].onmouseover = resalta;
+	miscapas[i].onmouseout = resalta;
+  }
+  
+*/
+  document.getElementById("seccion").onmouseout = resalta;
+  document.getElementById("seccion").onclick = resalta; 
+  
+}
+
+</script> 
+<div  id="seccion" style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...
+</div>
+<br>
+<div style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...2
+</div>
+<br>
+<div  style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...
+</div>
+<br>
+<div style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...2
+</div>
+<br>
+<div  style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...
+</div>
+<br>
+<div style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...2
+</div>
+<br>
+<div  style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...
+</div>
+<br>
+<div style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...2
+</div>
+<div  style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...
+</div>
+<br>
+<div style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...2
+</div>
+<br>
+<div  style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...
+</div>
+<br>
+<div style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...2
+</div>
+<br>
+<div  style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...
+</div>
+<br>
+<div style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...2
+</div>
+<br>
+<div  style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...
+</div>
+<br>
+<div style="width:150px; height:60px; border:3px solid silver">
+  Sección de contenidos...2
+</div>

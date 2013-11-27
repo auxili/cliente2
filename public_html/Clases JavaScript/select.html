@@ -1,0 +1,45 @@
+<html>
+
+<script type="text/javascript">
+function mostrar(boton)
+{
+with(document.formulario){ 
+	msg="Elementos: "+edad.length+"\n";
+	msg+="Edad: "+edad.options[edad.selectedIndex].value+"\n";
+	msg+=edad.options[edad.selectedIndex].text+"\n";
+
+	msg+="Lista Múltiple: "+edad.multiple;
+	msg+="Posición: "+edad.options[edad.selectedIndex].index+"\n";
+	msg+="Posición: "+edad.selectedIndex;
+}
+alert(msg);
+}
+function borrar()
+{
+edad=document.formulario.edad;
+edad.length=0;
+}
+function borrartodo()
+{
+edad=document.getElementById("lista");
+edad.parentNode.removeChild(edad);
+
+}
+</script>
+
+
+
+<form action="procesa.php" name="formulario" method="GET">
+	<p>Edad:<br/>
+	<select name="edad" id="lista">
+		<option value="<18" selected>Menor de 18 años</option>
+		<option value=">18 y <60">Entre 18 y 60 años</option>
+		<option value=">60">Mayor de 60 años</option>
+	</select>
+	</p>
+</form>
+<a href="#" onclick="mostrar(); return false">Ver valores</a>
+<a href="#" onclick="borrar(); return false">Borrar</a>
+<a href="#" onclick="borrartodo(); return false">Borrar Todo</a>
+</body>
+</html> 

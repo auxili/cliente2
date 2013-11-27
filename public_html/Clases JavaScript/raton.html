@@ -1,0 +1,12 @@
+
+<script>
+function muestraInformacion(elEvento) {
+  var evento = elEvento || window.event;
+  var coordenadaX = evento.clientX;
+  var coordenadaY = evento.clientY;
+  alert("Has pulsado el raton en la posicion: " + coordenadaX + ", " + coordenadaY);
+}
+ 
+document.onclick = muestraInformacion;
+
+</script>

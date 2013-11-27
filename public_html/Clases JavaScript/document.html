@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Exemple 4. Propietats de l'objecte document
+</title>
+
+<script type="text/javascript">
+var i=1;
+var titulooriginal = document.title;
+
+function cambiarTitulo()
+{
+	document.title = titulooriginal.substring(0,i);
+	i++;
+	if (i>titulooriginal.length) i=0;
+	setTimeout('cambiarTitulo()',100);
+}
+</script>
+</head> 
+
+
+<body text='blue' link='red' bgcolor='orange' vlink='grey'>
+<script type="text/javascript">
+with(document){
+	write("Document <b>linkColor </b>: " + linkColor + "<br>");
+	write("Document <b>bgColor</b>: " + bgColor + "<br>");
+	write("Document <b>fgcolor</b>: " + fgColor + "<br>");
+
+	fgColor="red";
+	bgColor="cccccc";
+}
+cambiarTitulo();
+</script>
+</html> 

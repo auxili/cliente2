@@ -1,0 +1,45 @@
+<html>
+<head>
+<script type="text/javascript">
+function moverventana()
+{
+mi_ventana.moveBy(5,5);
+
+i++;
+if (i<40)
+setTimeout('moverventana()',100);
+else
+mi_ventana.close();
+}
+
+function cerrar()
+{
+mi_ventana.close();
+}
+
+</script>
+</head> 
+
+<body>
+<script language="javascript">
+var opciones="left=100,top=100,width=250,height=150";
+i= 0;
+var mi_ventana = window.open("clase.html","",opciones);
+//mi_ventana.document.open();
+
+
+
+
+
+/*
+mi_ventana.document.write("una prueba de abrir ventanas");
+mi_ventana.document.close();
+mi_ventana.moveTo(400,100);
+moverventana();
+*/
+</script>
+Dato <input type=text>
+<input type=button onclick="cerrar()" value="cerrar">
+
+</body>
+</html>

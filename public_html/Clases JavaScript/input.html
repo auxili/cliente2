@@ -1,0 +1,47 @@
+<html>
+<script>
+function mostrar(boton){
+	with(document.formulario){
+	var msg="Elementos: "+edad.length+"\n";
+	msg+="Menor de 18 años: "+edad[0].checked+"\n";
+	msg+="Entre 18 y 60 años: "+edad[1].checked+"\n";
+	msg+="Mayor de 60 años: "+edad[2].checked+"\n";
+	}
+	alert(msg);
+}
+
+function seleccio(){
+	with(document.formulario){
+	for(var i=0;i<edad.length && !edad[i].checked;i++);
+	if(i<edad.length) 
+		alert("El valor seleccionad es "+edad[i].value);
+	else
+		alert("Debería seleccionar un valor");
+	}
+}
+
+function seleccionalotu()
+{
+
+document.formulario.edad[parseInt(prompt("Dime cual queires seleccionar"))].checked=true;
+
+
+}
+
+
+
+</script>
+
+<body>
+<form action="procesa.php" name="formulario" method="GET">
+	Edad:<br>
+	<input type="radio" name="edad" value="<18"> Menor de 18 años.<br>
+	<input type="radio" name="edad" value=">18 y <60" checked> Entre 18 y 60 años.<br>
+	<input type="radio" name="edad" value=">60"> Mayor de 60 años.<br> 
+	
+	<input type="button" value="Selección" onClick="seleccio();">
+	<input type="button" value="Seleccionalo tu" onClick="seleccionalotu();">
+</form>
+<A href="#" onclick="mostrar(); return false">Ver valores</A>
+</body>
+</html>
