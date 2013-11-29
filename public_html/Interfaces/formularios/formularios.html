@@ -5,7 +5,13 @@
         <title>Ejercicio 12 - Formulario de alta</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
         <link href="formularios.css" rel="stylesheet" type="text/css">
-
+            <script>
+                function mostrar(){
+                    
+                alerta = document.getElementsByTagName("nombre").value;
+                alert(alerta);
+                }
+            </script>
     </head>
     <body>
         <div id="contenedor">
@@ -17,7 +23,7 @@
                             <span class="requerido">*</span></label>
                         <div id="hover">
                             <span class="name">
-                                <input id="nombre" name="nombre" value="" />
+                                <input id="sdgfg" name="nombre" value="" />
                                 <label for="nombre">Nombre</label>
                             </span>
                             <span class="surname1">
@@ -69,7 +75,7 @@
                         <p class="ayuda">El código postal es imprescindible para poder recibir los
                             pedidos</p>
                     </li>
-                    
+
                     <li id="left1">
                         <label class="titulo" for="email">Email</label>
                         <div id="hover">
@@ -95,7 +101,7 @@
                         <p class="ayuda">Sin prefijo de país y sin espacios en blanco</p>
                     </li>
                     <li id="enviar">
-                        <input id="alta" type="submit" value="Darme de alta &rarr;" />
+                        <input id="alta" type="submit" value="Darme de alta &rarr;" onclick="mostrar()"/>
                     </li>
                 </ul>
             </form>

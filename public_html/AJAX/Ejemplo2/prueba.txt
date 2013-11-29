@@ -1,0 +1,5 @@
+Este es un fichero de prueba.
+
+Los datos se cargaran en la capa contenido.
+
+Datos cargados.

@@ -15,9 +15,9 @@ libro.prototype.mostrar = function() {
     alert("libro: " + this.titulo +
             "autor: " + this.autor +
             "stock: " + this.stock);
-    str="libro: " + this.titulo +
+    /*str="libro: " + this.titulo +
             "autor: " + this.autor +
-            "stock: " + this.stock;
+            "stock: " + this.stock;*/
     
     
 }
@@ -33,10 +33,8 @@ function venderLibro() {
 libro.prototype.vender = function() {
     this.stock--;
 }
-
 //ahora podría tener botones en mi web
 // alta libro, comprar, ver y vender
-
 function altaLibro() {
 //pedimos los datos
     autor = prompt("dime el autor");
@@ -46,10 +44,6 @@ function altaLibro() {
     //acabo de construir un objeto que además tendrá de stock 10;
     miLibreria.nuevoLibro(miLibro);
 }
-
-
-
-
 //esto es un metodo que saca su equivalente en su
 function verJson() {
     alert(JSON.stringify(miLibro));
@@ -67,7 +61,6 @@ libreria.prototype.nuevoLibro = function(libro) {//le pasamos el libro que al da
     //onload = miLibreria = new libreria("DAW");
     this.listaLibros[this.listaLibros.length] = libro;
     //esto lo que hace es que añadir el libro en la ultima posición de lista libros
-
 }
 libreria.prototype.totalLibros = function() {
     //alert(this.listaLibros);
@@ -95,7 +88,6 @@ libreria.prototype.buscaLibros = function() {
     }
     alert(libros);
 }
-
 /*Esta función y su metodo son para modificar el numero de stock
  * a partir */
 function promocion() {
@@ -109,6 +101,5 @@ libreria.prototype.promocion = function(autores, nlibros) {
             this.listaLibros[i].stock = parseInt(this.listaLibros[i].stock) + parseInt(nlibros);
             alert("Stock Actual: " + this.listaLibros[i].stock);
         }
-
     }
 }

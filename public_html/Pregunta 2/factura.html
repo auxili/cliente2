@@ -1,0 +1,68 @@
+<script>
+//--------------------------------------Objeto Factura ---------------------------------------------
+    function Factura(numero) {
+        this.numero = numero;
+        this.fecha = "11/12/2012";
+        this.articulos = [];
+        miFactura = new Factura;
+        //Factura.addEventListener("evento", function, false);
+    }
+// Metodo para anyadir un articulo a la factura: ponarticulo()
+    Factura.prototype.ponarticulo = function(numero) {
+        this.listaArticulos[this.listaArticulos.length] = articulos;
+    }
+// Metodo para ver los articulos de la Factura y el total: verarticulos()
+Factura.prototype.totalArticulos = function() {
+    alert(JSON.stringify(miFactura));
+}
+//--------------------------------------Objeto Articulo ---------------------------------------------
+    function Articulo(codigo, descripcion, precio, unidades) {
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.unidades = unidades;
+    }
+//-------------------------------------- Funciones para asociar a los botones de la pagina web
+    function articulo_nuevo(codigo, descripcion, precio, unidades) {
+//obtener los datos del art�culo
+
+// crear nuevo articulo
+        miArticulo = new Articulo(codigo, descripcion, precio, unidades);
+// a�adir el articulo a la factura
+        miArticulo.articulo_nuevo(miFactura);
+    }
+    function ver_articulos() {
+        miArticulo.ver_articulo;
+    }
+    Articulo.prototype.ver_articulo = function() {
+        alert("Codigo: " + this.codigo +
+                "Descripcion: " + this.descripcion +
+                "Precio: " + this.precio +
+                "Unidades" + this.unidades);
+    }
+// llamada al metodo del objeto factura para ver los articulos y el total
+function totalArticulos() {
+    miFactura.totalArticulos();
+}
+
+//---------------------------------- Funcion de carga de la pagina
+
+// crear la factura, el numero de factura el que querais
+
+// asignar eventos a las imagenes para que al hacer click sobre ella se a�ada el articulo a la factura
+
+
+
+</script>
+<body onload="Factura(1)">
+<center>
+    <img src="portatil.png" id="portatil" name="Articulo1|Portatil|550|1" onclick="articulo_nuevo(Articulo1, Portatil, 550, 1)">
+    <img src="disco.png"    id="disco"    name="Articulo2|Disco|80|1" onclick="articulo_nuevo(Articulo2,Disco, 80, 1)">
+    <img src="tablet.png"   id="tablet"   name="Articulo3|Tablet|480|1" onclick="articulo_nuevo(Articulo3, Tablet, 480, 1)">  
+
+    <br><br>
+
+    <a href="javascript:ver_articulos()">Ver Articulos</a>
+
+</center>
+</body>

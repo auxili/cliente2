@@ -1,0 +1,133 @@
+<script>
+
+    function pon_ingredientes()
+    {
+
+// Eliminar los ingredientes actuales. Lo mas facil seria comprobar si existe una capa por cada elemento y si es asi eliminarla.
+
+// Comprobar los checkbox marcados y por cada uno de ellos crear su imagen y situarla en la posicion indicada
+        // para realizar esta tarea seria mas facil llamar a una funcion pasandole el parametro del ingrediente a poner asi ahorrariais mucho tiempo 
+        // pon_ingredientes(ingrediente)
+// Mostrar el importe total
+        elementos = document.getElementsByName("ingrediente");
+        importe = 0;
+        for (var i = 0; i < elementos.length; i++) {
+            if (elementos[0].checked) {
+                champis = document.createElement("img");
+                champis.src = "champis.png";
+                champis.style.position = "absolute"
+                champis.style.left = "400px";
+                champis.style.top = "100px";
+                document.body.appendChild(champis);
+                importe += parseInt(elementos[0].value);
+            }
+            if (elementos[1].checked) {
+                salami = document.createElement("img");
+                salami.src = "salami.png";
+                salami.style.position = "absolute"
+                salami.style.left = "400px";
+                salami.style.top = "100px";
+                document.body.appendChild(salami);
+                importe += parseInt(elementos[1].value);
+            }
+            if (elementos[2].checked) {
+                olivas = document.createElement("img");
+                olivas.src = "olivas.png";
+                olivas.style.position = "absolute"
+                olivas.style.left = "400px";
+                olivas.style.top = "100px";
+                document.body.appendChild(olivas);
+                importe += parseInt(elementos[2].value);
+            }
+            if (elementos[3].checked) {
+                huevo = document.createElement("img");
+                huevo.src = "huevo.png";
+                huevo.style.position = "absolute"
+                huevo.style.left = "400px";
+                huevo.style.top = "100px";
+                document.body.appendChild(huevo);
+                importe += parseInt(elementos[3].value);
+            }
+        }
+        for (var i = 0; i < elementos.length; i++) {
+            if (elementos[0].checked === false) {
+                removeChild.parentNode.champis;
+            }
+            if (elementos[1].checked === false) {
+                removeChild.parentNode.salami;
+            }
+            if (elementos[2].checked === false) {
+                removeChild.parentNode.olivas;
+            }
+            if (elementos[3].checked === false) {
+                removeChild.parentNode.huevo;
+            }
+        }
+        /*imp = document.getElementById("importe");
+         p = document.createElement("p");
+         t = document.createTextNode("Precio: " + importe);
+         parrafo = p.appendChild(t);
+         imp.appendChild(parrafo);
+         */
+        document.getElementById("importe").firstChild.nodeValue = "Importe: " + importe;
+
+    }
+
+    function pon_ingrediente()
+    {
+
+
+
+// Esta funcion servira para crear la imagen y la capa por cada ingrediente
+
+
+    }
+
+    function quita()
+    {
+
+        //comprobar si existe la capa de cada ingrediente y eliminarla
+        //poner el total a 10
+
+
+    }
+
+//----------------------------- Funcion de carga de la pagina
+    function mostrarImagen() {
+        ca = document.createElement("div");
+        ca.id = micapa;
+        ca.style.position = "absolute"
+        ca.style.left = "400px";
+        ca.style.top = "100px";
+
+
+        a = document.createElement("img");
+        a.src = "pizza.jpg";
+        a.style.position = "absolute"
+        a.style.left = "400px";
+        a.style.top = "100px";
+
+        //como no se colocar la imagen con el z-index con os atributos
+        //la dejo aculta para ver el codigo
+        document.body.appendChild(a);
+
+    }
+    //crea la imagen de la base de la pizza
+    //poner el total de la base 10 con tamanyo de letra 35px (propiedad css fontsize)
+
+
+</script>
+
+<body onload="mostrarImagen()">
+    <br>
+    <input type="checkbox" value="1" name="ingrediente" id="champis"/> Champi�ones
+    <input type="checkbox" value="2" name="ingrediente" id="salami"/> Salami
+    <input type="checkbox" value="3" name="ingrediente" id="olivas"/> Olivas
+    <input type="checkbox" value="4" name="ingrediente" id="huevo"/> Huevo
+
+    <br><br>
+
+    <a href="javascript:pon_ingredientes()">Poner Ingredientes a la Pizza </a>
+    <button onclick="pon_ingrediente()">dsfasdfg</button>
+    <div id="importe"></div>
+</body>
