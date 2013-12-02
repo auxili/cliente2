@@ -14,11 +14,11 @@
         for (var i = 0; i < elementos.length; i++) {
             if (elementos[0].checked) {
                 champis = document.createElement("img");
-                champis.src = "champis.png";
+                this.src = "champis.png";
                 champis.style.position = "absolute"
                 champis.style.left = "400px";
                 champis.style.top = "100px";
-                document.body.appendChild(champis);
+                document.getElementById("micapa").appendChild(champis);
                 importe += parseInt(elementos[0].value);
             }
             if (elementos[1].checked) {
@@ -27,7 +27,7 @@
                 salami.style.position = "absolute"
                 salami.style.left = "400px";
                 salami.style.top = "100px";
-                document.body.appendChild(salami);
+                document.getElementById("micapa").appendChild(salami);
                 importe += parseInt(elementos[1].value);
             }
             if (elementos[2].checked) {
@@ -36,7 +36,7 @@
                 olivas.style.position = "absolute"
                 olivas.style.left = "400px";
                 olivas.style.top = "100px";
-                document.body.appendChild(olivas);
+                document.getElementById("micapa").appendChild(olivas);
                 importe += parseInt(elementos[2].value);
             }
             if (elementos[3].checked) {
@@ -45,7 +45,7 @@
                 huevo.style.position = "absolute"
                 huevo.style.left = "400px";
                 huevo.style.top = "100px";
-                document.body.appendChild(huevo);
+                document.getElementById("micapa").appendChild(huevo);
                 importe += parseInt(elementos[3].value);
             }
         }
@@ -73,7 +73,8 @@
 
     }
 
-    function pon_ingrediente()
+    function pon_ingrediente(ingrediente)
+    
     {
 
 
@@ -94,23 +95,21 @@
 
 //----------------------------- Funcion de carga de la pagina
     function mostrarImagen() {
+
+        
         ca = document.createElement("div");
-        ca.id = micapa;
-        ca.style.position = "absolute"
-        ca.style.left = "400px";
-        ca.style.top = "100px";
-
-
+        ca.id = "micapa";
+        document.body.appendChild(ca);
+        
         a = document.createElement("img");
+        a.id="pizza";
         a.src = "pizza.jpg";
         a.style.position = "absolute"
-        a.style.left = "400px";
+        a.style.left = "300px";
         a.style.top = "100px";
-
+        ca.appendChild(a);
         //como no se colocar la imagen con el z-index con os atributos
         //la dejo aculta para ver el codigo
-        document.body.appendChild(a);
-
     }
     //crea la imagen de la base de la pizza
     //poner el total de la base 10 con tamanyo de letra 35px (propiedad css fontsize)
@@ -127,7 +126,7 @@
 
     <br><br>
 
-    <a href="javascript:pon_ingredientes()">Poner Ingredientes a la Pizza </a>
-    <button onclick="pon_ingrediente()">dsfasdfg</button>
+    <a href="javascript:pon_ingredientes(elemento)">Poner Ingredientes a la Pizza </a>
     <div id="importe"></div>
+    <div id="pizza2"></div>
 </body>
