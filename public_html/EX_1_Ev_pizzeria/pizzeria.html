@@ -1,0 +1,129 @@
+<script>
+
+total=10;
+
+function basepizza()
+{
+
+
+//---- Creamos la capa ----
+
+pizza=document.createElement("div");
+
+pizza.id="pizza";
+pizza.style.position="absolute";
+pizza.style.top="150px";
+pizza.style.left="400px";
+
+
+//---- Creamos la foto ----
+
+foto=document.createElement("img");
+foto.src="pizza.jpg";
+
+pizza.appendChild(foto);
+document.body.appendChild(pizza);
+
+}
+
+
+
+
+
+function pon_ingredientes()
+{
+
+quita();
+
+
+ingredientes=document.getElementsByName("ingrediente");
+
+for(i=0;i<ingredientes.length;i++)
+{
+  if (ingredientes[i].checked)
+  {
+	//alert(ingredientes[i].id);	
+	pon_ingrediente(ingredientes[i].id)
+	total=total+parseInt(ingredientes[i].value);
+	//alert (total);
+  }
+}
+
+document.getElementById("importe").innerHTML="Importe: "+ total;
+document.getElementById("importe").style.fontSize="35px";
+
+}
+
+
+function pon_ingrediente(nombre)
+{
+
+
+
+ingrediente=document.createElement("div");
+
+ingrediente.id="capa"+nombre;
+
+ingrediente.style.position="absolute";
+ingrediente.style.top="150px";
+ingrediente.style.left="400px";
+
+
+//---- Creamos la foto ----
+
+foto=document.createElement("img");
+foto.src=nombre +".png";
+
+ingrediente.appendChild(foto);
+document.body.appendChild(ingrediente);
+
+
+}
+
+function quita()
+{
+
+	
+	if(document.getElementById("capachampis"))
+		document.body.removeChild(document.getElementById("capachampis"))
+	
+	if(document.getElementById("capasalami"))
+		document.body.removeChild(document.getElementById("capasalami"))
+	
+	if(document.getElementById("capaolivas"))
+		document.body.removeChild(document.getElementById("capaolivas"))
+
+	if(document.getElementById("capahuevo"))
+		document.body.removeChild(document.getElementById("capahuevo"))
+
+        total=10;
+
+
+
+}
+
+
+window.onload=function() {
+basepizza()
+document.getElementById("importe").innerHTML="Importe: "+ total;
+document.getElementById("importe").style.fontSize="35px";
+
+}
+
+
+</script>
+
+
+<br>
+
+<input type="checkbox" value="1" name="ingrediente" id="champis"/> Champiñones
+<input type="checkbox" value="2" name="ingrediente" id="salami"/> Salami
+<input type="checkbox" value="3" name="ingrediente" id="olivas"/> Olivas
+<input type="checkbox" value="4" name="ingrediente" id="huevo"/> Huevo
+
+<br><br>
+
+<a href="javascript:pon_ingredientes()">Poner Ingredientes a la Pizza </a>
+
+<p id="importe"></p>
+

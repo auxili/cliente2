@@ -9,12 +9,13 @@
     }
 // Metodo para anyadir un articulo a la factura: ponarticulo()
     Factura.prototype.ponarticulo = function(numero) {
+
         this.listaArticulos[this.listaArticulos.length] = articulos;
     }
 // Metodo para ver los articulos de la Factura y el total: verarticulos()
-Factura.prototype.totalArticulos = function() {
-    alert(JSON.stringify(miFactura));
-}
+    Factura.prototype.totalArticulos = function() {
+        alert(JSON.stringify(miFactura));
+    }
 //--------------------------------------Objeto Articulo ---------------------------------------------
     function Articulo(codigo, descripcion, precio, unidades) {
         this.codigo = codigo;
@@ -25,11 +26,15 @@ Factura.prototype.totalArticulos = function() {
 //-------------------------------------- Funciones para asociar a los botones de la pagina web
     function articulo_nuevo(codigo, descripcion, precio, unidades) {
 //obtener los datos del art�culo
-
+        datos = this.name.split("|");
+        codigo = datos[0];
+        descripcion = datos[1];
+        precio = datos[2];
+        unidades = datos[3];
 // crear nuevo articulo
         miArticulo = new Articulo(codigo, descripcion, precio, unidades);
 // a�adir el articulo a la factura
-        miArticulo.articulo_nuevo(miFactura);
+        miFactura.pon_articulo(miArticulo);
     }
     function ver_articulos() {
         miArticulo.ver_articulo;
@@ -41,12 +46,18 @@ Factura.prototype.totalArticulos = function() {
                 "Unidades" + this.unidades);
     }
 // llamada al metodo del objeto factura para ver los articulos y el total
-function totalArticulos() {
-    miFactura.totalArticulos();
-}
+    function totalArticulos() {
+        miFactura.totalArticulos();
+    }
 
 //---------------------------------- Funcion de carga de la pagina
-
+    window.onload = function() {
+        f1 = new Factura(19);
+        fotos = document.getElementsByTagName("img");
+        for (i = 0; i < fotos.length; i++) {
+            fotos[i].addEventListener("click", articulo_nuevo, false);
+        }
+    }
 // crear la factura, el numero de factura el que querais
 
 // asignar eventos a las imagenes para que al hacer click sobre ella se a�ada el articulo a la factura
@@ -57,7 +68,7 @@ function totalArticulos() {
 <body onload="Factura(1)">
 <center>
     <img src="portatil.png" id="portatil" name="Articulo1|Portatil|550|1" onclick="articulo_nuevo(Articulo1, Portatil, 550, 1)">
-    <img src="disco.png"    id="disco"    name="Articulo2|Disco|80|1" onclick="articulo_nuevo(Articulo2,Disco, 80, 1)">
+    <img src="disco.png"    id="disco"    name="Articulo2|Disco|80|1" onclick="articulo_nuevo(Articulo2, Disco, 80, 1)">
     <img src="tablet.png"   id="tablet"   name="Articulo3|Tablet|480|1" onclick="articulo_nuevo(Articulo3, Tablet, 480, 1)">  
 
     <br><br>

@@ -1,0 +1,81 @@
+<script>
+
+//------------------------------------Objeto Factura ---------------------------------------------
+
+function Factura(numero)
+{
+this.numero=numero;
+this.fecha="29/11/2013";
+
+this.articulos=[];
+}
+
+
+// Método para añadir un articulo a la factura: ponarticulo()
+
+
+// Método para ver los articulos de la Factura y el total: verarticulos()
+
+
+
+//--------------------------------------Objeto Articulo ---------------------------------------------
+
+function Articulo(codigo,descripcion,precio,unidades)
+{
+
+this.codigo=codigo;
+this.descripcion=descripcion;
+this.precio=precio;
+this.unidades=unidades;
+
+}
+
+
+//------------------------------- Funciones para los eventos de la pagina ----------------------------
+
+
+//-- Al hacer click en las fotos
+
+function articulo_nuevo()
+{
+
+
+//obtener los datos del artículo
+
+// crear nuevo articulo
+
+// añadir el articulo a la factura
+
+
+}
+
+//-- Al pulsar el enlace ver_articulos
+
+function ver_articulos()
+{
+
+// llamada al metodo del objeto factura para ver los articulos y el total
+
+}
+
+
+// Funcion de carga de la pagina
+
+// crear la factura, el numero de factura el que querais
+
+// asignar eventos a las imagenes para que al hacer click sobre ella se añada el articulo a la factura
+
+
+
+</script>
+
+<center>
+<img src="portatil.png" id="portatil" name="Articulo1|Portatil|550|1">
+<img src="disco.png"    id="disco"    name="Articulo2|Disco|80|1">
+<img src="tablet.png"   id="tablet"   name="Articulo3|Tablet|480|1">  
+
+<br><br>
+
+<a href="javascript:ver_articulos()">Ver Articulos</a>
+
+</center>

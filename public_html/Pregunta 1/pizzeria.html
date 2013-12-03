@@ -1,5 +1,10 @@
 <script>
-
+    window.onload=function(){
+        mostrarImagen();
+        document.getElementById("importe").innerHTML="Importe: "+total;
+        document.getElementById("importe").style.fontSize="35px";
+        
+    }
     function pon_ingredientes()
     {
 
@@ -8,6 +13,15 @@
 // Comprobar los checkbox marcados y por cada uno de ellos crear su imagen y situarla en la posicion indicada
         // para realizar esta tarea seria mas facil llamar a una funcion pasandole el parametro del ingrediente a poner asi ahorrariais mucho tiempo 
         // pon_ingredientes(ingrediente)
+        // 
+        ingredientes = document.getElementsByName("ingredientes");
+        
+        for (i=0;i<ingredientes.length;i++){
+            if(ingredientes[i].checked){
+                pon_ingrediente(ingrediente[i].id);
+                total = total + parseInt(ingrediente[i].value);
+            }
+        }
 // Mostrar el importe total
         elementos = document.getElementsByName("ingrediente");
         importe = 0;
@@ -92,11 +106,8 @@
 
 
     }
-
 //----------------------------- Funcion de carga de la pagina
-    function mostrarImagen() {
-
-        
+    function mostrarImagen() {   
         ca = document.createElement("div");
         ca.id = "micapa";
         document.body.appendChild(ca);
@@ -114,10 +125,9 @@
     //crea la imagen de la base de la pizza
     //poner el total de la base 10 con tamanyo de letra 35px (propiedad css fontsize)
 
-
 </script>
 
-<body onload="mostrarImagen()">
+<body>
     <br>
     <input type="checkbox" value="1" name="ingrediente" id="champis"/> Champi�ones
     <input type="checkbox" value="2" name="ingrediente" id="salami"/> Salami

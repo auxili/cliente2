@@ -1,0 +1,117 @@
+<script>
+
+//--------------------------------------Objeto Factura ---------------------------------------------
+
+function Factura(numero)
+{
+this.numero=numero;
+this.fecha="30/12/2012";
+
+this.articulos=[];
+}
+
+
+Factura.prototype.ponarticulo=function(articulo)
+{
+
+esta=false;
+for(i=0;i<this.articulos.length;i++)
+{
+	if(this.articulos[i].codigo==articulo.codigo)
+	{
+		this.articulos[i].unidades++;	
+		esta=true;
+	}
+}
+
+if(esta==false)
+	{
+	this.articulos[this.articulos.length]=articulo;
+	}
+
+}
+
+
+Factura.prototype.verarticulos=function()
+{
+total=0;
+for (i=0;i<this.articulos.length;i++)
+{
+  total+=this.articulos[i].precio*this.articulos[i].unidades	
+  alert ("Codigo: " + this.articulos[i].codigo + "\nDescripcion: " + this.articulos[i].descripcion + "\nPrecio: " + this.articulos[i].precio + "\nUnidades: " + this.articulos[i].unidades)
+}
+alert ("TOTAL CARRITO: " + total);
+
+}
+
+
+
+//--------------------------------------Objeto Articulo ---------------------------------------------
+
+function Articulo(codigo,descripcion,precio,unidades)
+{
+
+this.codigo=codigo;
+this.descripcion=descripcion;
+this.precio=precio;
+this.unidades=unidades;
+
+}
+
+
+
+
+
+
+
+
+
+function articulo_nuevo()
+{
+
+datos=this.name.split("|");
+codigo=datos[0];
+descripcion=datos[1];
+precio=datos[2];
+unidades=datos[3];
+
+
+a=new Articulo(codigo, descripcion,precio,unidades);
+
+
+f1.ponarticulo(a);
+
+}
+
+
+function ver_articulos()
+{
+f1.verarticulos()
+}
+
+
+window.onload=function()
+{
+
+f1=new Factura(15);
+
+fotos=document.getElementsByTagName("img");
+for(i=0;i<fotos.length;i++)
+	fotos[i].addEventListener("click", articulo_nuevo, false);
+
+}
+
+
+
+</script>
+
+<center>
+<img src="portatil.png" id="portatil" name="Articulo1|Portatil|550|1">
+<img src="disco.png"    id="disco"    name="Articulo2|Disco|80|1">
+<img src="tablet.png"   id="tablet"   name="Articulo3|Tablet|480|1">  
+
+<br><br>
+
+<a href="javascript:ver_articulos()">Ver Articulos</a>
+
+</center>
