@@ -1,97 +1,41 @@
 <script>
-    window.onload=function(){
-        mostrarImagen();
-        document.getElementById("importe").innerHTML="Importe: "+total;
-        document.getElementById("importe").style.fontSize="35px";
-        
-    }
-    function pon_ingredientes()
-    {
+    total = 10;
+    function pon_ingrediente(nombre) {
 
 // Eliminar los ingredientes actuales. Lo mas facil seria comprobar si existe una capa por cada elemento y si es asi eliminarla.
-
 // Comprobar los checkbox marcados y por cada uno de ellos crear su imagen y situarla en la posicion indicada
-        // para realizar esta tarea seria mas facil llamar a una funcion pasandole el parametro del ingrediente a poner asi ahorrariais mucho tiempo 
-        // pon_ingredientes(ingrediente)
-        // 
-        ingredientes = document.getElementsByName("ingredientes");
-        
-        for (i=0;i<ingredientes.length;i++){
-            if(ingredientes[i].checked){
-                pon_ingrediente(ingrediente[i].id);
-                total = total + parseInt(ingrediente[i].value);
-            }
-        }
+// para realizar esta tarea seria mas facil llamar a una funcion pasandole el parametro del ingrediente a poner asi ahorrariais mucho tiempo 
+// pon_ingredientes(ingrediente)
+         quita();
 // Mostrar el importe total
-        elementos = document.getElementsByName("ingrediente");
-        importe = 0;
-        for (var i = 0; i < elementos.length; i++) {
-            if (elementos[0].checked) {
-                champis = document.createElement("img");
-                this.src = "champis.png";
-                champis.style.position = "absolute"
-                champis.style.left = "400px";
-                champis.style.top = "100px";
-                document.getElementById("micapa").appendChild(champis);
-                importe += parseInt(elementos[0].value);
-            }
-            if (elementos[1].checked) {
-                salami = document.createElement("img");
-                salami.src = "salami.png";
-                salami.style.position = "absolute"
-                salami.style.left = "400px";
-                salami.style.top = "100px";
-                document.getElementById("micapa").appendChild(salami);
-                importe += parseInt(elementos[1].value);
-            }
-            if (elementos[2].checked) {
-                olivas = document.createElement("img");
-                olivas.src = "olivas.png";
-                olivas.style.position = "absolute"
-                olivas.style.left = "400px";
-                olivas.style.top = "100px";
-                document.getElementById("micapa").appendChild(olivas);
-                importe += parseInt(elementos[2].value);
-            }
-            if (elementos[3].checked) {
-                huevo = document.createElement("img");
-                huevo.src = "huevo.png";
-                huevo.style.position = "absolute"
-                huevo.style.left = "400px";
-                huevo.style.top = "100px";
-                document.getElementById("micapa").appendChild(huevo);
-                importe += parseInt(elementos[3].value);
-            }
-        }
-        for (var i = 0; i < elementos.length; i++) {
-            if (elementos[0].checked === false) {
-                removeChild.parentNode.champis;
-            }
-            if (elementos[1].checked === false) {
-                removeChild.parentNode.salami;
-            }
-            if (elementos[2].checked === false) {
-                removeChild.parentNode.olivas;
-            }
-            if (elementos[3].checked === false) {
-                removeChild.parentNode.huevo;
-            }
-        }
-        /*imp = document.getElementById("importe");
-         p = document.createElement("p");
-         t = document.createTextNode("Precio: " + importe);
-         parrafo = p.appendChild(t);
-         imp.appendChild(parrafo);
-         */
-        document.getElementById("importe").firstChild.nodeValue = "Importe: " + importe;
+
+        var contiene = document.createElement("div");
+        contiene.name = "capaContenido";
+        contiene.id = nombre + "c";
+        contiene.style.position = "absolute";
+        contiene.style.top = "100px";
+        contiene.style.left = "300px";
+
+        var imgcontiene = document.createElement("img");
+        imgcontiene.src = nombre + ".png";
+
+
+        contiene.appendChild(imgcontiene);
+        document.body.appendChild(contiene);
 
     }
 
-    function pon_ingrediente(ingrediente)
-    
-    {
+    function pon_ingredientes() {
+        
+        var ingredientes = document.getElementsByName("ingrediente");
+        for (var i = 0; i < ingredientes.length; i++) {
 
-
+            if (ingredientes[i].checked) {
+                alert("nombre checked: " + ingredientes[i].id);
+                pon_ingrediente(ingredientes[i].id);
+                //total = total + parseInt(ingredientes[i].value);
+            }
+        }
 
 // Esta funcion servira para crear la imagen y la capa por cada ingrediente
 
@@ -100,20 +44,40 @@
 
     function quita()
     {
-
+        ingredientes = document.getElementById("wraper");
+        for (var i = 0; i < ingredientes.length; i++) {
+            if (ingredientes[0].checked === false) {
+                ingredientes[0].parentNode.removeChild;
+            }
+            if (ingredientes[1].checked === false) {
+                ingredientes[1].parentNode.removeChild;
+            }
+            if (ingredientes[2].checked === false) {
+                ingredientes[2].parentNode.removeChild;
+            }
+            if (ingredientes[3].checked === false) {
+                ingredientes[3].parentNode.removeChild;
+            }
+        }
         //comprobar si existe la capa de cada ingrediente y eliminarla
         //poner el total a 10
 
 
     }
 //----------------------------- Funcion de carga de la pagina
-    function mostrarImagen() {   
+    window.onload = function() {
+        mostrarImagen();
+        document.getElementById("importe").innerHTML = "Importe: " + total;
+        document.getElementById("importe").style.fontSize = "35px";
+
+    }
+    function mostrarImagen() {
         ca = document.createElement("div");
-        ca.id = "micapa";
+        ca.id = "wrapper";
         document.body.appendChild(ca);
-        
+
         a = document.createElement("img");
-        a.id="pizza";
+        a.id = "pizza";
         a.src = "pizza.jpg";
         a.style.position = "absolute"
         a.style.left = "300px";
@@ -136,7 +100,7 @@
 
     <br><br>
 
-    <a href="javascript:pon_ingredientes(elemento)">Poner Ingredientes a la Pizza </a>
+    <a href="javascript:pon_ingredientes()">Poner Ingredientes a la Pizza </a>
     <div id="importe"></div>
     <div id="pizza2"></div>
 </body>
