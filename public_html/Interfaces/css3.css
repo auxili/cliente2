@@ -1,6 +1,6 @@
 /*ROTATE css3*/
 
-#rotate{
+#rotate1{
     background-color: #cccccc;
     width: 200px;
     height: 300px;
@@ -13,4 +13,11 @@
     height: 300px;
     transform:rotate3D(1,2,3,120deg);
     -webkit-transform: rotate3D(1,2,3,120deg);
+}
+#rotate3{
+    background-color: #00cc66;
+        width: 200px;
+    height: 300px;
+    transform:rotate3D(1,2,3,120deg);
+    -webkit-transform: rotate3D(0,0,120,120deg);
 }

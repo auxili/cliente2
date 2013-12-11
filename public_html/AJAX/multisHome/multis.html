@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+     <head>
+             <title>Objeto XMLHTTPRequest</title>
+      </head>
+
+<script type="text/javascript">
+
+   var READY_STATE_UNINITIALIZED=0;
+   var READY_STATE_LOADING=1;
+   var READY_STATE_LOADED=2;
+   var READY_STATE_INTERACTIVE=3;
+   var READY_STATE_COMPLETE=4;
+
+  
+function realizaPeticionAjax()
+  {
+  var numero = prompt("Elige tu tabla");
+
+   document.getElementById("contenido").innerHTML="Cargando...<img src=ajax-loader.gif>";
+   //var numerito = document.getElementsByName("formulario").nodevalue;
+
+   if(window.XMLHttpRequest)
+            peticion=new XMLHttpRequest();
+   else if(window.ActiveXObject)
+            peticion=new ActiveXObject("Microsoft.XMLHTTP");
+
+	
+   peticion.onreadystatechange=procesaRespuesta;
+   peticion.open('GET','multis.php?numero='+numero);
+   peticion.send(null);
+
+
+  function procesaRespuesta()
+  {
+   if(peticion.readyState==READY_STATE_COMPLETE)
+   {
+        if(peticion.status==200)
+         {
+            var contenido=document.getElementById("contenido");    
+            contenido.innerHTML="<p>" + peticion.responseText + "</p>";
+         }
+    }	
+   }
+
+}
+</script>
+
+  <body>
+       <a href="multis.php?numero=7">tabla del 7</a>
+       <a href="javascript:realizaPeticionAjax()">Pedir datos</a>
+	   <div id="formulario">
+		<h4>La tabla del:</h4>
+			<form action="multis.php" method="post">
+			Numero: <input type="text" name="numero"/>
+			<input type="submit" value="Ver tabla"	/>
+			</form>
+			<form action="multis.php" method="post">
+			<select name="numero">
+				<option value="1">tabla del 1</option>
+				<option value="2">tabla del 2</option>
+				<option value="3">tabla del 3</option>
+				<option value="4">tabla del 4</option>
+				<option value="5">tabla del 5</option>
+				<option value="6">tabla del 6</option>
+				<option value="7">tabla del 7</option>
+				<option value="8">tabla del 8</option>
+				<option value="9">tabla del 9</option>
+				<option value="10">tabla del 10</option>
+			</select>
+			<input type="submit" value="Ver tabla"	/>
+			</form>
+			
+			<input type="submit" value="multiplica ajax" onclick="javascript:realizaPeticionAjax()"/>
+			
+	   </div>
+	   <div id="contenido"></div>
+    </body>
+</html>
+
+

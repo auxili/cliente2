@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+     <head>
+             <title>Objeto XMLHTTPRequest</title>
+      </head>
+
+<script type="text/javascript">
+
+   var READY_STATE_UNINITIALIZED=0;
+   var READY_STATE_LOADING=1;
+   var READY_STATE_LOADED=2;
+   var READY_STATE_INTERACTIVE=3;
+   var READY_STATE_COMPLETE=4;
+
+  
+function realizaPeticionAjax()
+  {
+
+   document.getElementById("contenido").innerHTML="Cargando...<img src=ajax-loader.gif>";
+
+   if(window.XMLHttpRequest)
+            peticion=new XMLHttpRequest();
+   else if(window.ActiveXObject)
+            peticion=new ActiveXObject("Microsoft.XMLHTTP");
+
+
+   peticion.onreadystatechange=procesaRespuesta;
+   
+	numero=prompt("dime el multiplicador");
+   
+   //peticion.open('GET','multis.php');
+   peticion.open('GET','multis.php?numero='+numero);
+   peticion.send(null);
+
+
+  function procesaRespuesta()
+  {
+   if(peticion.readyState==READY_STATE_COMPLETE)
+   {
+        if(peticion.status==200)
+         {
+            var contenido=document.getElementById("contenido");    
+            contenido.innerHTML="<p>" + peticion.responseText + "</p>";
+         }
+    }	
+   }
+
+}
+</script>
+
+  <body>
+	<select>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+	</select>
+       <a href="javascript:realizaPeticionAjax()">Pedir datos en ajax</a>
+	   <a href="multis.php?numero=5">Pedir datos en php (tabla del 5)</a>
+       <div id="contenido"></div>
+    </body>
+</html>
+
+
