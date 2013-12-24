@@ -20,6 +20,7 @@ function totalMenu(){
 			costeT = parseInt(elementos[i].value);
 		}
 	}
+        if (costeP==0 || costeS==0 || costeT==0) alert("Falta por seleccionar algún plato");
 	total = costeP + costeS + costeT;
 	document.getElementById("total").firstChild.nodeValue = "Precio Total: " + total + " €";
 }

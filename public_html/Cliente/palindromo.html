@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>FECHA</title>
+    </head>
+
+
+    <script type="text/JavaScript">
+    frase = prompt("Introduce la frase");    
+    //var frase="La ruta nos aporto otro paso natural";
+        var fs = frase.length;
+        var m = frase.toLowerCase();
+        //quito espacios
+        /*
+        //metodo 1
+        cadena="";
+        for(i=0;1<frase.length;i++){
+        if(frase.charAt(i)!="";
+        cadena=cadena+frase.charAt(i);
+        }*/
+
+        fse=m.replace(/\s/g,'');
+        //imprimir palindromo
+        //document.write(fse);
+
+        //almaceno tama��o
+        /*
+        //se podr��a invertir
+        cadena2="";
+        for(i=cadena.length - 1; i>0; i--){
+        cadena=cadena2+cadena.charAt(i);
+        }
+        */
+
+        n=parseInt(fse.length/2);
+        tamanio=fse.length-1;
+        // compruebo:
+        document.write(tamanio);
+        palindromo=true;
+        for(i=0;i<n;i++)//lo dividimos entre dos el tama��o para hacer solo la mitad de comparaciones.
+        if (fse.charAt(i)!=fse.charAt(tamanio-i))
+        palindromo=false;
+        if (palindromo) document.write("Si es un palindromo");
+        else document.write("No es un palindromo");
+    </script>
+
+    <body>
+        <div id="capa">
+        </div>
+    </body>
+</html>

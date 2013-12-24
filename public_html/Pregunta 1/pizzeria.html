@@ -1,81 +1,55 @@
 <script>
     total = 10;
     function pon_ingrediente(nombre) {
-
-// Eliminar los ingredientes actuales. Lo mas facil seria comprobar si existe una capa por cada elemento y si es asi eliminarla.
-// Comprobar los checkbox marcados y por cada uno de ellos crear su imagen y situarla en la posicion indicada
-// para realizar esta tarea seria mas facil llamar a una funcion pasandole el parametro del ingrediente a poner asi ahorrariais mucho tiempo 
-// pon_ingredientes(ingrediente)
-         quita();
-// Mostrar el importe total
-
         var contiene = document.createElement("div");
         contiene.name = "capaContenido";
         contiene.id = nombre + "c";
         contiene.style.position = "absolute";
         contiene.style.top = "100px";
         contiene.style.left = "300px";
-
         var imgcontiene = document.createElement("img");
         imgcontiene.src = nombre + ".png";
-
-
         contiene.appendChild(imgcontiene);
         document.body.appendChild(contiene);
-
     }
-
     function pon_ingredientes() {
-        
+        quita();
         var ingredientes = document.getElementsByName("ingrediente");
         for (var i = 0; i < ingredientes.length; i++) {
 
             if (ingredientes[i].checked) {
-                alert("nombre checked: " + ingredientes[i].id);
+
                 pon_ingrediente(ingredientes[i].id);
-                //total = total + parseInt(ingredientes[i].value);
+                //alert("nombre checked: " + ingredientes[i].id);
+                total = total + parseInt(ingredientes[i].value);
             }
         }
-
-// Esta funcion servira para crear la imagen y la capa por cada ingrediente
-
-
-    }
-
-    function quita()
-    {
-        ingredientes = document.getElementById("wraper");
-        for (var i = 0; i < ingredientes.length; i++) {
-            if (ingredientes[0].checked === false) {
-                ingredientes[0].parentNode.removeChild;
-            }
-            if (ingredientes[1].checked === false) {
-                ingredientes[1].parentNode.removeChild;
-            }
-            if (ingredientes[2].checked === false) {
-                ingredientes[2].parentNode.removeChild;
-            }
-            if (ingredientes[3].checked === false) {
-                ingredientes[3].parentNode.removeChild;
-            }
-        }
-        //comprobar si existe la capa de cada ingrediente y eliminarla
-        //poner el total a 10
-
-
-    }
-//----------------------------- Funcion de carga de la pagina
-    window.onload = function() {
-        mostrarImagen();
         document.getElementById("importe").innerHTML = "Importe: " + total;
         document.getElementById("importe").style.fontSize = "35px";
-
+    }
+    function quita()
+    {
+        var a = document.getElementById("champisc");
+        var b = document.getElementById("salamic");
+        var c = document.getElementById("olivasc");
+        var d = document.getElementById("huevoc");
+        if (a)
+            document.body.removeChild(a);
+        if (b)
+            document.body.removeChild(b);
+        if (c)
+            document.body.removeChild(c);
+        if (d)
+            document.body.removeChild(d);
+        total = 10;
+    }
+    window.onload = function() {
+        mostrarImagen();
     }
     function mostrarImagen() {
         ca = document.createElement("div");
         ca.id = "wrapper";
         document.body.appendChild(ca);
-
         a = document.createElement("img");
         a.id = "pizza";
         a.src = "pizza.jpg";
@@ -83,17 +57,12 @@
         a.style.left = "300px";
         a.style.top = "100px";
         ca.appendChild(a);
-        //como no se colocar la imagen con el z-index con os atributos
-        //la dejo aculta para ver el codigo
     }
-    //crea la imagen de la base de la pizza
-    //poner el total de la base 10 con tamanyo de letra 35px (propiedad css fontsize)
-
 </script>
 
 <body>
     <br>
-    <input type="checkbox" value="1" name="ingrediente" id="champis"/> Champi�ones
+    <input type="checkbox" value="1" name="ingrediente" id="champis"/> Champi&ntilde;ones
     <input type="checkbox" value="2" name="ingrediente" id="salami"/> Salami
     <input type="checkbox" value="3" name="ingrediente" id="olivas"/> Olivas
     <input type="checkbox" value="4" name="ingrediente" id="huevo"/> Huevo
